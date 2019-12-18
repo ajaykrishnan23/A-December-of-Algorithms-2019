@@ -24,7 +24,13 @@ We have a small collection of algorithms, one for every day of the month. Scroll
   - [**December 8 - Cheating Probability**](#december-8---cheating-probability)
   - [**December 9 - One to One?**](#december-9---one-to-one)
   - [**December 10 - Count The Cookies**](#december-10---count-the-cookies)
-  - [**December ? - Show JaSON the way**](#december-?---show-jason-the-way)
+  - [**December 11 - Is This A Valid Email Address**](#december-11---is-this-a-valid-email-address)
+  - [**December 12 - Show JaSON the way**](#december-12---show-jason-the-way)
+  - [**December 13 - Toggling Switches**](#december-13---toggling-switches)
+  - [**December 14 - A Wordplay with Vowels and Consonants**](#december-14---a-wordplay-with-vowels-and-consonants)
+  - [**December 15 - Intruder Alert**](#december-15---intruder-alert)
+  - [**December 16 - Casino Royale**](#december-16---casino-royale)
+  - [**December 17 - Subway Surfer**](#december-17---subway-surfer)
   - [**FAQ**](#faq)
 
 
@@ -226,7 +232,7 @@ We have a small collection of algorithms, one for every day of the month. Scroll
 
 ### **December 8 - Cheating Probability**
   - **Problem**
-    - Given an RxC Matrix in with each element represents the Department of a student seated in that row and coloumn in an examination hall, write a code to calculate the probability of each student copying if a person from the same department sits:
+    - Given an RxC Matrix in which each element represents the Department of a student seated in that row and column in an examination hall, write a code to calculate the probability of each student copying if a person from the same department sits:
     	-  In front of him = 0.3
     	-  Behind him = 0.2
     	-  To his left or right = 0.2
@@ -278,11 +284,11 @@ We have a small collection of algorithms, one for every day of the month. Scroll
 
 ### **December 10 - Count The Cookies**
   - **Problem**
-    - Tipsie, a cookie store sells cookies in jars. Each jar has one cookie in them. The store gives a free cookie if the customer returns enough cookie jars.
-    - For example, if a customer Alex has `n=15` to spend on jars of cookie that cost `p=3` each. He can turn in `c=2` cookie jars to receive another cookie.
-    - Initially, he buys 5 cookies and has 5 jars after eating them. He turns in 4 of them, leaving him with 1, for 2 more cookies.
-    - After eating those two, he has 3 cookie jars, turns in 2 leaving him with 1 cookie jar and his new cookie. 
-    - Once he eats that one, he has 2 cookie jars and turns them in for another cookie. After eating that one, he only has 1 cookie, and his shopping ends. Overall, he has eaten `5+2+1+1=9` cookies.
+    - Tipsie, a cookie store sells cookies in jars. Each jar has one cookie in them. The store gives a free cookie if the customer returns enough cookie jars.
+    - For example, if a customer Alex has `n=15` to spend on jars of cookie that cost `p=3` each. He can turn in `c=2` cookie jars to receive another cookie.
+    - Initially, he buys 5 cookies and has 5 jars after eating them. He turns in 4 of them, leaving him with 1, for 2 more cookies.
+    - After eating those two, he has 3 cookie jars, turns in 2 leaving him with 1 cookie jar and his new cookie. 
+    - Once he eats that one, he has 2 cookie jars and turns them in for another cookie. After eating that one, he only has 1 cookie, and his shopping ends. Overall, he has eaten `5+2+1+1=9` cookies.
     - The integers `n`, `p` and `c` represent money to spend, cost of a cookie, and the number of cookie jars he can turn in for a free cookie respectively.
     - Implement a function `cookieCount(n, p, c)` to count the number of cookies Alex could buy.
    
@@ -298,107 +304,137 @@ We have a small collection of algorithms, one for every day of the month. Scroll
     - [Div Mod in C & C++](https://www.cprogramming.com/tutorial/modulus.html)
     - [Div Mod in Java](http://www.cs.ukzn.ac.za/~hughm/java/intro/week2/21.html)
     
-### **December ? - Show JaSON the way**
+
+### **December 11 - Is This A Valid Email Address**
+  - **Problem**
+    - While signing up for a website, you must have seen that when an invalid email address is entered, you get a warning. This is because the website validates the given email address according to some specification of a valid email address (check the resources section to know the format of a valid email address). 
+    - Now, for today's challenge implement your own email address verification algorithm.
+    - For the sake of simplicity, assume that a valid email address has the following format:
+      - `local_part@domain`
+      - The `local_part` should contain only alphabets, numbers and the characters: `_`, `.`, `-`.
+      - The `domain` should contain only alphabets followed by `.com`
+  - **Example**
+      ```
+      // Valid email addresses
+      john-doe31@gmail.com
+      jane.austen_691@dnarifle.com
+      ```
+  - **Optional Problem**
+    - Implement an algorithm to verify an email address based on the complete syntax specification (given in the resources section).
+  - **Resources**
+    - [Complete Syntax Specification of Email Addresses](https://en.wikipedia.org/wiki/Email_address#Syntax)
+  - <details><summary><b>Still stuck?</b></summary>
+      <ul>
+          <li>Use Regular Expressions to verify the format of the email.</li>
+          <li><a href="http://www.cplusplus.com/reference/regex/">Regular Expressions in C++</a></li>
+          <li><a href="https://www.tutorialspoint.com/python/python_reg_expressions.htm">Regular Expressions in Python</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">Regular Expressions in JavaScript</a></li>
+          <li><a href="https://www.javatpoint.com/java-regex">Regular Expressions in Java</a></li>
+      </ul>
+    </details>
+
+
+### **December 12 - Show JaSON the way**
   - **Problem** 
   	- Jason is stranded in a desert.His phone's battery is going to die out and all he has left is a compass.
-    - Parse the JaSON.json(in src/res) file and get the latitude and logitude values of the current and destination location.
+    - Parse the JaSON.json(in src/res) file and get the latitude and longitude values of the current and destination location.
     - Also find the distance between those two locations (refer resources for the link)
     - Return a Directions json file with your personalized message, distance and some direction.
-  
   - **Example**
-       ```
-       sample output:
+       - **JaSON.json(src/res):**
+       ```json
        {
-        "directions": [
-          {
-            "message": "Meet at the destination point",
-            "distance": 21.17,
-            "direction": "N"
-          }
+  		"markers": 
+		[
+			{
+				"name": "start",
+				"location": [25.1212, 55.1535],
+			},
+			{
+				"name": "destination",
+				"location": [25.2285, 55.3273]
+			}
+  		]
+       }
+       ```
+       - **Sample Output:**
+       ```json
+       {
+        "directions": 
+		[
+			  {
+			    "message": "Meet at the destination point",
+			    "distance": 21.17,
+			    "direction": "N"
+			  }
         ]
-      }
+       }
        ```
   - **Resources**
     - [Java JSON parsing](https://www.mkyong.com/java/json-simple-example-read-and-write-json/)
     - [Python JSON parsing](https://docs.python.org/3/library/json.html)
     - [C++ JSON parsing](https://nlohmann.github.io/json/)
     - [Calculate distance](https://stackoverflow.com/questions/365826/calculate-distance-between-2-gps-coordinates)
-  - **Note**
+  - **Note**  
     JSON format can differ and values like message and direction are totally upto you.
 
-### **December ? - Greyscale**
-  - **Problem** 
-    - In Image Processing, RGB images are often converted to greyscale images.
-    - This is because, an RGB image has 3 colour channels and represents 3D space.
-    - Converting RGB to greyscale reduces it to just a 2D space (b&w).
-    - For your next task, you are given an image (go to src/res/beagle.jpg).
-    - Use OpenCV to convert the image to a greyscale image.
-    - Return greyscale matrix(array) for the RGB image.
 
-  - **Example**
-       ```
-       For some image,
-       sample output:
-       [[ 85,  85,  85, ...,  82,  82,  82],
-       [ 85,  85,  85, ...,  82,  82,  82],
-       [ 85,  85,  85, ...,  82,  82,  82],
-       ...,
-       [ 82,  82,  82, ..., 101, 101, 101],
-       [ 82,  82,  82, ..., 101, 101, 101],
-       [ 82,  82,  82, ..., 101, 101, 101]]
-       ```
-  - **Resources**
-    - [Java opencv](https://opencv-java-tutorials.readthedocs.io/en/latest/)
-    - [Python opencv](https://docs.opencv.org/master/d0/de3/tutorial_py_intro.html)
-    - [C++ opencv](https://www.opencv-srf.com/p/introduction.html)
-
-### **December ? - Toggling Switches**
+### **December 13 - Toggling Switches**
   - **Problem**  
-    - There are n switches labeled from 1 to n,to turn on/off n bulbs.
+    - There are `n` switches labeled from 1 to `n`,to turn on/off `n` bulbs.
     - At start all the bulbs are switched off
-    - At first round, every bulb is turned 'on'
-    - At second round, every second switch is turned 'off'
-    - At third round, every third switch is toggled on/off(on->off and off->on)
+    - At first round, every bulb is turned `on`
+    - At second round, every second switch is turned `off`
+    - At third round, every third switch is toggled on/off (on->off and off->on)
     - This goes on and during nth round, every nth switch is toggled on/off.
-    - How many switches are in the 'on' state.
+    - The task is to write `O(n)` and constant time functions to find how many switches are in the `on` state (two separate functions).
     - [optional] Find the switch nos. that are in the 'on' state after n such iterations.
 
   - **Example**
-       ```
-       Enter no of switches: 200
-       No of switches in the 'on' state at the end: 14
-       ```
+  ```
+  Enter no of switches: 5
+       
+  Iteration 0: 1->off  2->off  3->off  4->off  5->off
+  Iteration 1: 1->on   2->on   3->on   4->on   5->on
+  Iteration 2: 1->on   2->off  3->on   4->off  5->on
+  Iteration 3: 1->on   2->off  3->off  4->off  5->on
+  Iteration 4: 1->on   2->off  3->off  4->on   5->on
+  Iteration 5: 1->on   2->off  3->off  4->on   5->off
+  
+  No of switches in the 'on' state at the end: 2
+  ```
   - **Resources**
     - [Java math module](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html)
     - [Python math module](https://docs.python.org/3/library/math.html)
     - [C++ math module](http://www.cplusplus.com/reference/cmath/)
 
-### **December ? - A Wordplay with Vowels and Consonants**
+
+### **December 14 - A Wordplay with Vowels and Consonants**
   - **Problem**  
     - There are two players A and B. Initially, they are given the same string ```s```. 
     - They have to make substrings with letters in 's'.
     - A makes substrings starting with a vowel(a,e,i,o,u) and B makes substrings starting with consonants.
     - For each occurence of their substring in 's', the players get 1 point.
     - The task is to find who has the maximum score and what's the winner's score for a string 's'.
-  
-  - **Format**
-      ```
-      Enter string: monkey
-      The winner is B with 14 pts
-      ```
   - **Example**
        ```
-       string: london
+       String: london
        A's score:7 (o,on,ond,ondo,ondon)
        B's score:14 (l,lo,lon,lond,londo,london,n,nd,ndo,ndon,d,do,don) 
        The winner is B with 14 points
        ```
+   - **Format**
+      ```
+      Enter string: monkey
+      The winner is B with 14 pts
+      ```
   - **Resources**
     - [String in c++](https://www.w3schools.com/cpp/cpp_strings.asp)
     - [Strings in python](https://www.w3schools.com/python/python_strings.asp)
     - [Strings in java](https://www.javatpoint.com/java-string)
 
-### **December ? - Intruder Alert**
+
+### **December 15 - Intruder Alert**
   - **Problem**  
     - Rick Sanchez just discovered that someone from another planet has been intruding into his private planet use its resources.
     - In order to lure that person in to humiliate him, Rick decides to send a dish as a gift. This dish has been cooked with a balance between its main ingredients: Animal A and Liquid B.
@@ -412,7 +448,70 @@ We have a small collection of algorithms, one for every day of the month. Scroll
     ```
   - **Resources**
     - [Backtracking](https://www.javatpoint.com/backtracking-introduction)
+    
 
+### **December 16 - Casino Royale**
+  - **Problem**  
+    - In poker, players form sets of five playing cards, called hands, according to the rules of the game. Each hand has a rank, which is compared against the ranks of other hands of all those in the game and the highest hand wins all the money that everybody puts in.
+    - A poker hand is specified as a space separated list of five playing cards:
+    - Each input card has two characters indicating face and suit. For example: `2d` (two of diamonds).
+    	- Faces are: `a`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `j`, `q`, `k`
+		- Suits are: `h` :hearts: (hearts), `d` :diamonds: (diamonds), `c` :clubs: (clubs), and `s` :spades: (spades)
+    - Create a program to parse a single five card poker hand and specify the poker hand ranking and produce one of the following outputs.
+    ```
+     straight-flush
+	 four-of-a-kind
+	 full-house
+	 flush
+	 straight
+	 three-of-a-kind
+	 two-pair
+	 one-pair
+	 high-card
+	 invalid
+    ```
+  - **Example**
+    ```
+     2h  2h  2h  kc  qd:  three-of-a-kind
+     2h  5h  7d  8c  9s:  high-card
+     ah  2d  3c  4c  5d:  straight
+     2h  3h  2d  3c  3d:  full-house
+     2h  7h  2d  3c  3d:  two-pair
+     2h  7h  7d  7c  7s:  four-of-a-kind 
+     10h jh  qh  kh  ah:  straight-flush
+     4h  4s  ks  5d  10s: one-pair
+     qc  10c 7c  6c  4c:  flush
+    ```
+  - <img src="/src/assets/casino.gif" height=250/>
+  
+  - **Resources**
+    - [Poker hand ranking](https://en.wikipedia.org/wiki/List_of_poker_hands#Hand-ranking_categories)
+    - [Arrays](https://makecode.microbit.org/types/array)
+    - [Sorting](https://www.geeksforgeeks.org/sorting-algorithms)
+    
+### **December 17 - Subway Surfer**
+  - **Problem**
+    - Many metro train systems across the world have multiple lines. These lines often meet each other at few stations called interchanges. Commuters often change lines at interchanges based on their destination.
+    - <img src="/src/assets/December-17 Subway Surfers.png" height=250/>     
+    - In the above diagram we can observe that if we want to travel between Greenwich station and the Airport we have to travel for 10 stations in the red line : `GREENWICH -> SUNTECH  -> MARINA -> CENTRAL -> CITY HALL -> BAY -> MUSEUM -> RIVERFRONT -> DOWNTOWN -> AIRPORT`
+    - However if the passengers switch trains to the blue line in CENTRAL station they can save time and reach their destination faster: `GREENWICH -> SUNTECH ->MARINA -> CENTRAL -> ZOO -> ESTATE ->AIRPORT`
+    - Write a program that accepts two ordered arrays of railway lines and calculates the fastest route possible between two stations.
+  - **Example**
+      ```
+      Enter Train Lines, Start and Endpoint:
+      Line 1: Park, Central, Beach, Mylapore, Kilpauk
+      Line 2: Central, T.Nagar, Washerampet, MKB Nagar.
+      Start: Park
+      End: T.Nagar
+      ```
+      ```
+      Fastest Path: Park ->Central -> T.nagar
+      ```
+  - **Resources**
+    - [Arrays in C++](http://www.cplusplus.com/doc/tutorial/arrays/)
+    - [Arrays in Java](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
+    - [Arrays in Python](https://www.w3schools.com/python/python_lists.asp)
+    
 ## Maintainers
 - [K-Kraken](https://github.com/K-Kraken)
 - [jyuvaraj03](https://github.com/jyuvaraj03)
